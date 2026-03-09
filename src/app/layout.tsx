@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     title: `What Is My Screen Resolution? — Free Online Checker`,
     description: SITE_DESCRIPTION,
   },
+  verification: {
+    google: "g610Cv52qtS5fL_nbL9BLN-GvveWhpn23X8_rzEtFSI",
+  },
   alternates: {
     canonical: SITE_URL,
   },
