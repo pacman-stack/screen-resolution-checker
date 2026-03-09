@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import gfm from "remark-gfm";
 import type { BlogPost } from "@/types";
 
 const BLOG_DIR = path.join(process.cwd(), "src/content/blog");
@@ -44,7 +45,7 @@ export async function getPost(slug: string): Promise<BlogPost | undefined> {
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content: markdown } = matter(raw);
 
-  const result = await remark().use(html).process(markdown);
+  const result = await remark().use(gfm).use(html).process(markdown);
 
   const date =
     data.date instanceof Date
